@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/exp_bg"
+    tools:context=".AgricultureList">
+
+    <SearchView android:id="@+id/search" android:layout_width="match_parent"
+        android:background="#fff"
+        android:layout_margin="8dp"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentTop="true" android:iconifiedByDefault="false" />
+
+
+
+
+
+
+
+
+    <ExpandableListView
+        android:indicatorLeft="?android:expandableListPreferredChildIndicatorLeft"
+        android:layout_below="@id/search"
+
+        android:id="@+id/expagrilist"
+
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+
+
+    </ExpandableListView>
+
+</RelativeLayout>

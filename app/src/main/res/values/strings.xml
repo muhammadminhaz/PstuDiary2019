@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">PSTU Diary 2019</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="tab_text_1">Faculty</string>
-    <string name="tab_text_2">Administration</string>
-    <string name="tab_text_3">Services</string>
-    <string name="action_settings">Developers</string>
+    <string name="app_name">পবিপ্রবি ডায়েরি ২০১৯</string>
+    <string name="title_activity_main">পবিপ্রবি ডায়েরি ২০১৯</string>
+    <string name="tab_text_1">অনুষদ</string>
+    <string name="tab_text_2">প্রশাসন</string>
+    <string name="tab_text_3">সেবাসমূহ</string>
+    <string name="action_settings">ডেভেলপার</string>
     <string name="section_format">Hello World from section: %1$d</string>
 </resources>

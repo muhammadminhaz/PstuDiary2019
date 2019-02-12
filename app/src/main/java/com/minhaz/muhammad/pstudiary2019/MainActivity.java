@@ -1,9 +1,13 @@
 package com.minhaz.muhammad.pstudiary2019;
 
+import android.content.Intent;
+import android.os.PersistableBundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
@@ -16,8 +20,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -81,6 +89,25 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void Developers(MenuItem item) {
+        Intent i = new Intent(this, DeveloperActivity.class);
+        startActivity(i);
+    }
+
+    public void ProVC(View view) {
+
+       CustomDialog customDialog = new CustomDialog(MainActivity.this,"a","a","a","a","a");
+       customDialog.show();
+    }
+
+    public void VC(View view) {
+        CustomDialog customDialog = new CustomDialog(MainActivity.this,"a","a","a","a","a");
+        customDialog.show();
+    }
+
+
+
 
     /**
      * A placeholder fragment containing a simple view.
@@ -153,4 +180,72 @@ public class MainActivity extends AppCompatActivity {
             return 3;
         }
     }
+
+    public void AgriList(View view) {
+
+        Intent intent = new Intent(this, AgricultureList.class);
+        startActivity(intent);
+    }
+
+    public void FishList(View view)
+    {
+        Intent intent = new Intent(this, FisheriesList.class);
+        startActivity(intent);
+
+    }
+
+    public void CseList(View view)
+    {
+        Intent intent = new Intent(this, ComputerScienceList.class);
+        startActivity(intent);
+
+    }
+
+    public void BamList(View view)
+    {
+        Intent intent = new Intent(this, BusinessAdministrationManagementList.class);
+        startActivity(intent);
+
+    }
+
+    public void VeteList(View view)
+    {
+        Intent intent = new Intent(this, VeterinaryList.class);
+        startActivity(intent);
+
+    }
+
+    public void DmList(View view)
+    {
+        Intent intent = new Intent(this, DisasterManagementList.class);
+        startActivity(intent);
+
+    }
+
+    public void LandList(View view)
+    {
+        Intent intent = new Intent(this, LandManagementList.class);
+        startActivity(intent);
+
+    }
+
+    public void FoodList(View view)
+    {
+        Intent intent = new Intent(this, NutritionAndFoodList.class);
+        startActivity(intent);
+
+    }
+
+    public void GeneralList(View view) {
+        Intent intent = new Intent (this, GeneralServicesActivity.class);
+        startActivity(intent);
+    }
+
+    public void RegisterList(View view) {
+        Intent intent = new Intent (this, RegisterOfficeActivity.class);
+        startActivity(intent);
+    }
+
+
+
 }

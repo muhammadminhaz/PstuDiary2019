@@ -3,12 +3,162 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="#f4f4f4" >
+    android:background="#f4f4f4">
 
-    <ExpandableListView
-        android:id="@+id/lvExp"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:clipToPadding="false">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/vc"
+
+            android:onClick="VC"
+            app:cardElevation="16dp"
+            app:cardCornerRadius="5dp"
+            android:layout_width="160dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:layout_height="190dp"
+            android:clickable="true"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:padding="10dp"
+                    android:src="@drawable/vc"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:textAllCaps="true"
+                    android:layout_height="wrap_content"
+                    android:text="Professor Dr. Md. Harun-Or- Rashid"
+                    android:textStyle="bold"
+                    android:layout_margin="5dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#102167"
+                    android:layout_margin="5dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:text="vc"
+                    android:layout_margin="5dp"/>
+
+
+
+
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/provc"
+
+            android:onClick="ProVC"
+            android:layout_width="160dp"
+            android:layout_height="190dp"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardElevation="16dp"
+            app:cardCornerRadius="5dp"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:padding="10dp"
+                    android:src="@drawable/provc"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+                    android:text="Professor Mohammad Ali"
+                    android:layout_margin="5dp"/>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#102167"
+                    android:layout_margin="5dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+                    android:textAllCaps="true"
+                    android:text="Pro vc"
+                    android:layout_margin="5dp"/>
+
+
+
+
+
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
+
+    <Button
+        android:onClick="RegisterList"
+        android:textColor="#102167"
+        android:textSize="20dp"
+        android:background="@drawable/button_bg"
+        android:text="Register Office"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginRight="9dp"
+        android:layout_width="match_parent"
+
+
+        android:elevation="10dp"
+        android:layout_height="80dp" />
+
+    <Button
+
+        android:textColor="#102167"
+        android:textSize="20dp"
+        android:text="Dean Office"
+        android:background="@drawable/button_bg"
+        android:elevation="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginRight="9dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp" />
 
 </LinearLayout>
