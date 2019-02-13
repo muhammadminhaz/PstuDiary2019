@@ -116,6 +116,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void DeanList(View view) {
+        Intent i = new Intent(this,DeanOfficeActivity.class);
+        startActivity(i);
+    }
+
 
     /**
      * A placeholder fragment containing a simple view.

@@ -1,19 +1,52 @@
 package com.minhaz.muhammad.pstudiary2019;
 
+
+
 import android.app.SearchManager;
 import android.content.Context;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.SearchView;
-
 import android.widget.ExpandableListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
+import com.arlib.floatingsearchview.FloatingSearchView;
+
+import java.io.IOException;
 import java.util.ArrayList;
 
-public class RegisterOfficeActivity extends AppCompatActivity implements
-        SearchView.OnQueryTextListener, SearchView.OnCloseListener {
+public class RegisterOfficeActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, SearchView.OnCloseListener {
+
+
+    private CustomAdapter listAdapter;
+
+    private ExpandableListView myList;
+    private ArrayList<Parent> parentList = new ArrayList<>();
+    Cursor c = null;           //zihan
+    DatabaseHelper myDbHelper;      //zihan
+
+    @Override
+    public boolean onClose() {
+        listAdapter.fillerData("");
+        expandAll();
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        listAdapter.fillerData(query);
+        expandAll();
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        listAdapter.fillerData(newText);
+        expandAll();
+        return false;
+    }
 
     class ChildShortClick implements ExpandableListView.OnChildClickListener
     {
@@ -33,26 +66,30 @@ public class RegisterOfficeActivity extends AppCompatActivity implements
         }
     }
 
-    private SearchView search;
-    private CustomAdapter listAdapter;
-    private ExpandableListView myList;
-    private ArrayList<Parent> parentList = new ArrayList<Parent>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agriculture_list);
 
+        myDbHelper = new DatabaseHelper(getApplicationContext());       //zihan
+
+
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        search = (SearchView) findViewById(R.id.search);
+
+        SearchView search = findViewById(R.id.search);
+
+
+
+        assert searchManager != null;
         search.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         search.setIconifiedByDefault(false);
+        search.setFocusable(false);
         search.setOnQueryTextListener(this);
         search.setOnCloseListener(this);
 
-        //display the list
         displayList();
-        //expand all Groups
+
         expandAll();
     }
 
@@ -61,10 +98,9 @@ public class RegisterOfficeActivity extends AppCompatActivity implements
         for (int i = 0; i < count; i++) {
             myList.expandGroup(i);
         }
-
-
     }
 
+    //method to expand all groups
     private void displayList() {
 
         //display the list
@@ -76,39 +112,52 @@ public class RegisterOfficeActivity extends AppCompatActivity implements
         listAdapter = new CustomAdapter(this, parentList);
         //attach the adapter to the list
         myList.setAdapter(listAdapter);
-        myList.setOnChildClickListener(new ChildShortClick());
+        myList.setOnChildClickListener(new RegisterOfficeActivity.ChildShortClick());
 
     }
+
 
     private void loadSomeData() {
 
-//        ArrayList<Child> countryList = new ArrayList<Child>();
-//        Child country = new Child("প্রফেসর ডঃ স্বদেশ চন্দ্র সামন্ত", "রেজিস্ট্রার", "01816864529", "ashikur.pstu@yahoo.com");
-//        countryList.add(country);
-//
-//
-//        Parent continent = new Parent("রেজিস্ট্রার অফিস", countryList);
-//        parentList.add(continent);
+
+        //Put data here
+
+        //datafromDb("cse_cit","কম্পিউটার সায়েন্স এন্ড ইনফরমেশন টেকনোলজি"); <Format
+
+
+
+
+
+
     }
 
-    @Override
-    public boolean onClose() {
-        listAdapter.fillerData("");
-        expandAll();
-        return false;
+    public void datafromDb(String table_name,String department_name){
+        ArrayList<Child> childList = new ArrayList<Child>();
+
+
+        try {
+            myDbHelper.createDataBase();
+        } catch (IOException ioe) {
+            throw new Error("Unable to create database");
+        }
+
+        myDbHelper.openDataBase();
+
+
+        c = myDbHelper.query(table_name, null, null, null, null, null, null);
+        if (c.moveToFirst()) {
+            do {
+                Child child = new Child( c.getString(0),  c.getString(1), c.getString(2),  c.getString(3));
+                childList.add(child);
+            } while (c.moveToNext());
+            Parent parent = new Parent(department_name, childList);
+            parentList.add(parent);
+
+        }
     }
 
-    @Override
-    public boolean onQueryTextChange(String query) {
-        listAdapter.fillerData(query);
-        expandAll();
-        return false;
-    }
 
-    @Override
-    public boolean onQueryTextSubmit(String query) {
-        listAdapter.fillerData(query);
-        expandAll();
-        return false;
-    }
+
 }
+
+

@@ -152,6 +152,7 @@
 
     <Button
 
+        android:onClick="DeanList"
         android:textColor="#102167"
         android:textSize="20dp"
         android:text="ডিন অফিস"

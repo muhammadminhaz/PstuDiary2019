@@ -17,7 +17,7 @@ import com.arlib.floatingsearchview.FloatingSearchView;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class GeneralServicesActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, SearchView.OnCloseListener {
+public class DeanOfficeActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, SearchView.OnCloseListener {
 
 
     private CustomAdapter listAdapter;
@@ -61,7 +61,7 @@ public class GeneralServicesActivity extends AppCompatActivity implements Search
             TextView occupation = v.findViewById(R.id.occupationText);
             TextView mobile = v.findViewById(R.id.mobile);
             TextView email = v.findViewById(R.id.eemail);
-            new CustomDialog(GeneralServicesActivity.this, name.getText().toString(), occupation.getText().toString(), mobile.getText().toString(), email.getText().toString(), ((Parent) GeneralServicesActivity.this.parentList.get(groupPosition)).getName()).show();
+            new CustomDialog(DeanOfficeActivity.this, name.getText().toString(), occupation.getText().toString(), mobile.getText().toString(), email.getText().toString(), ((Parent) DeanOfficeActivity.this.parentList.get(groupPosition)).getName()).show();
             return false;
         }
     }
@@ -112,7 +112,7 @@ public class GeneralServicesActivity extends AppCompatActivity implements Search
         listAdapter = new CustomAdapter(this, parentList);
         //attach the adapter to the list
         myList.setAdapter(listAdapter);
-        myList.setOnChildClickListener(new GeneralServicesActivity.ChildShortClick());
+        myList.setOnChildClickListener(new DeanOfficeActivity.ChildShortClick());
 
     }
 
