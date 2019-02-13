@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegisterOfficeActivity"></activity>
+        <activity android:name=".ExternalActivity"></activity>
+        <activity android:name=".EmergencyActivity" />
+        <activity android:name=".RegisterOfficeActivity" />
         <activity android:name=".GeneralServicesActivity" />
         <activity android:name=".VeterinaryList" />
         <activity android:name=".LandManagementList" />

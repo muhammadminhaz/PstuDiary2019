@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/toolbar_gradient_bg"
+    android:background="@drawable/developer_bg"
     android:orientation="vertical"
     tools:context=".DeveloperActivity">
 
@@ -13,7 +13,7 @@
     <com.romainpiel.shimmer.ShimmerTextView
 
         android:textSize="17dp"
-        android:textColor="#dadedf"
+        android:textColor="#000"
         android:id="@+id/text"
         android:gravity="center"
         android:layout_marginTop="10dp"
@@ -40,7 +40,7 @@
         android:layout_width="150dp"
         android:layout_centerHorizontal="true"
         android:layout_height="1dp"
-        android:background="#999999"/>
+        android:background="#000"/>
 
 
     <ImageButton
@@ -79,7 +79,7 @@
 
 
     <com.romainpiel.shimmer.ShimmerTextView
-        android:textColor="#dadedf"
+        android:textColor="#000"
         android:id="@+id/text1"
         android:layout_below="@id/call_dev"
         android:gravity="center"
@@ -90,7 +90,7 @@
 
     <com.romainpiel.shimmer.ShimmerTextView
         android:id="@+id/text2"
-        android:textColor="#dadedf"
+        android:textColor="#000"
         android:layout_below="@id/text1"
         android:gravity="center"
 
@@ -102,7 +102,7 @@
     <com.romainpiel.shimmer.ShimmerTextView
         android:id="@+id/text3"
         android:layout_below="@id/text2"
-        android:textColor="#dadedf"
+        android:textColor="#000"
         android:gravity="center"
         android:text="কম্পিউটার সায়েন্স এন্ড ইনফরমেশন টেকনোলজি বিভাগ"
         android:layout_width="match_parent"
@@ -121,7 +121,7 @@
         android:background="@drawable/top_gradient_bg"/>
 
     <TextView
-        android:textColor="#dadedf"
+        android:textColor="#000"
         android:textSize="17dp"
         android:textStyle="bold|italic"
         android:id="@+id/text4"
@@ -151,20 +151,20 @@
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#999999"/>
+            android:background="#000"/>
         <TextView
-            android:textColor="#dadedf"
+            android:textColor="#000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Md. Zulfikar Ali Zihan"/>
         <TextView
-            android:textColor="#dadedf"
+            android:textColor="#000"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="B.Sc. Engineering"/>
         <TextView
-            android:textColor="#dadedf"
+            android:textColor="#000"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -236,20 +236,20 @@
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#999999"/>
+            android:background="#000"/>
         <TextView
             android:layout_width="wrap_content"
-            android:textColor="#dadedf"
+            android:textColor="#000"
             android:layout_height="wrap_content"
             android:text="Md. Minhazur Rahman"/>
         <TextView
-            android:textColor="#dadedf"
+            android:textColor="#000"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="B.Sc. Engineering"/>
         <TextView
-            android:textColor="#dadedf"
+            android:textColor="#000"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -304,7 +304,7 @@ android:layout_toLeftOf="@id/msg_minhaz"
         android:src="@drawable/ic_email_black_24dp" />
 
     <TextView
-        android:textColor="#dadedf"
+        android:textColor="#000"
         android:layout_margin="5dp"
         android:text="পবিপ্রবি ডায়েরি এপ্লিকেশনের এটি একটি বেটা ভার্সন। যেহেতু সকল তথ্য এপ্লিকেশনের জন্য টাইপ করে নেয়া হয়েছে সেহেতু কিছু তথ্য ভুল বা নাও থাকতে পারে।এক্ষেত্রে সবার সহযোগিতা কামনা করছি। এছাড়া এপ্লিকেশনের ডিজাইন, ফিচার নিয়েও যেকোন সাজেশন দেয়া যেতে পারে।"
 

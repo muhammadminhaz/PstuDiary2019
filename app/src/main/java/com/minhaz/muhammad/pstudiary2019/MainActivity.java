@@ -106,7 +106,15 @@ public class MainActivity extends AppCompatActivity {
         customDialog.show();
     }
 
+    public void EmergencyList(View view) {
+        Intent i = new Intent(this,EmergencyActivity.class);
+        startActivity(i);
+    }
 
+    public void ExternalList(View view) {
+        Intent i = new Intent(this,ExternalActivity.class);
+        startActivity(i);
+    }
 
 
     /**

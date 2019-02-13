@@ -363,6 +363,7 @@ public boolean onClose() {
         assert searchManager != null;
         search.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         search.setIconifiedByDefault(false);
+        search.setFocusable(false);
         search.setOnQueryTextListener(this);
         search.setOnCloseListener(this);
 

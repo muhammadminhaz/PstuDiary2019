@@ -24,10 +24,27 @@
 
     <Button
 
+        android:onClick="EmergencyList"
         android:layout_below="@+id/general"
+        android:id="@+id/emergency"
         android:textColor="#102167"
         android:textSize="20dp"
         android:text="Emergency Services"
+        android:background="@drawable/button_bg"
+        android:elevation="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginRight="9dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp" />
+
+    <Button
+
+        android:onClick="ExternalList"
+        android:layout_below="@+id/emergency"
+        android:textColor="#102167"
+        android:textSize="20dp"
+        android:text="External Contacts"
         android:background="@drawable/button_bg"
         android:elevation="10dp"
         android:layout_marginTop="20dp"

@@ -8,12 +8,18 @@
     android:background="@drawable/exp_bg"
     tools:context=".AgricultureList">
 
-    <SearchView android:id="@+id/search" android:layout_width="match_parent"
+    <SearchView android:id="@+id/search"
+        android:layout_width="match_parent"
         android:background="#fff"
         android:layout_margin="8dp"
         android:layout_height="wrap_content"
+        android:queryHint="খুঁজুন..."
+        android:elevation="14dp"
 
-        android:layout_alignParentTop="true" android:iconifiedByDefault="false" />
+
+
+        android:layout_alignParentTop="true"
+        android:iconifiedByDefault="false" />
 
 
 
