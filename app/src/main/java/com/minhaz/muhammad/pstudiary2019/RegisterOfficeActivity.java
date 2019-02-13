@@ -82,13 +82,13 @@ public class RegisterOfficeActivity extends AppCompatActivity implements
 
     private void loadSomeData() {
 
-        ArrayList<Child> countryList = new ArrayList<Child>();
-        Child country = new Child("প্রফেসর ডঃ স্বদেশ চন্দ্র সামন্ত", "রেজিস্ট্রার", "01816864529", "ashikur.pstu@yahoo.com");
-        countryList.add(country);
-
-
-        Parent continent = new Parent("রেজিস্ট্রার অফিস", countryList);
-        parentList.add(continent);
+//        ArrayList<Child> countryList = new ArrayList<Child>();
+//        Child country = new Child("প্রফেসর ডঃ স্বদেশ চন্দ্র সামন্ত", "রেজিস্ট্রার", "01816864529", "ashikur.pstu@yahoo.com");
+//        countryList.add(country);
+//
+//
+//        Parent continent = new Parent("রেজিস্ট্রার অফিস", countryList);
+//        parentList.add(continent);
     }
 
     @Override

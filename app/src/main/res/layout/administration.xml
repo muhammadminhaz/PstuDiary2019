@@ -140,7 +140,7 @@
         android:textColor="#102167"
         android:textSize="20dp"
         android:background="@drawable/button_bg"
-        android:text="Register Office"
+        android:text="রেজিস্ট্রার অফিস"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="9dp"
         android:layout_marginRight="9dp"
@@ -154,7 +154,7 @@
 
         android:textColor="#102167"
         android:textSize="20dp"
-        android:text="Dean Office"
+        android:text="ডিন অফিস"
         android:background="@drawable/button_bg"
         android:elevation="10dp"
         android:layout_marginTop="20dp"

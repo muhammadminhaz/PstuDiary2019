@@ -3,7 +3,7 @@
     <string name="title_activity_main">পবিপ্রবি ডায়েরি ২০১৯</string>
     <string name="tab_text_1">অনুষদ</string>
     <string name="tab_text_2">প্রশাসন</string>
-    <string name="tab_text_3">সেবাসমূহ</string>
+    <string name="tab_text_3">সেবাসমুহ</string>
     <string name="action_settings">ডেভেলপার</string>
     <string name="section_format">Hello World from section: %1$d</string>
 </resources>
