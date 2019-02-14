@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/developer_bg"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/developer_bg"
+
+
     android:orientation="vertical"
     tools:context=".DeveloperActivity">
 
@@ -27,8 +33,8 @@
         android:layout_margin="5dp"
         android:layout_below="@+id/text"
         android:id="@+id/sirpic"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         app:civ_border_width="2dp"
         app:civ_border_color="@color/colorPrimary"
         android:layout_centerHorizontal="true"
@@ -43,47 +49,15 @@
         android:background="#000"/>
 
 
-    <ImageButton
 
-        android:layout_marginTop="5dp"
-        android:id="@+id/call_dev"
-        android:layout_toLeftOf="@+id/message_dev"
-        android:layout_marginRight="10dp"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_below="@+id/view11"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/ic_call_black_24dp"
-        android:background="@drawable/call_devs" />
-    <ImageButton
-        android:layout_marginTop="5dp"
-        android:id="@+id/message_dev"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_below="@+id/view11"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/ic_message_black_24dp"
-
-        android:background="@drawable/mail_dev" />
-    <ImageButton
-        android:layout_marginTop="5dp"
-        android:id="@+id/email_dev"
-        android:layout_toRightOf="@id/message_dev"
-        android:layout_marginLeft="10dp"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_below="@+id/view11"
-        android:src="@drawable/ic_email_black_24dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/msg_dev" />
 
 
     <com.romainpiel.shimmer.ShimmerTextView
         android:textColor="#000"
         android:id="@+id/text1"
-        android:layout_below="@id/call_dev"
+        android:layout_below="@id/view11"
         android:gravity="center"
-        android:text="মোঃ মাহবুবুর রহমান"
+        android:text="@string/sir_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
@@ -94,7 +68,7 @@
         android:layout_below="@id/text1"
         android:gravity="center"
 
-        android:text="লেকচারার"
+        android:text="@string/sir_designation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
@@ -104,7 +78,7 @@
         android:layout_below="@id/text2"
         android:textColor="#000"
         android:gravity="center"
-        android:text="কম্পিউটার সায়েন্স এন্ড ইনফরমেশন টেকনোলজি বিভাগ"
+        android:text="@string/sir_dept"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
@@ -140,13 +114,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="100dp"
+            android:layout_width="80dp"
             android:src="@drawable/gianpic"
             app:civ_border_width="2dp"
             app:civ_border_color="@color/colorPrimary"
 
             android:layout_gravity="center"
-            android:layout_height="100dp" />
+            android:layout_height="80dp" />
         <View
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
@@ -175,44 +149,7 @@
 
     </LinearLayout>
 
-    <ImageButton
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="5dp"
 
-        android:layout_marginLeft="15dp"
-        android:id="@+id/call_gian"
-        android:layout_below="@+id/linear_gian"
-
-
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-
-
-        android:src="@drawable/ic_call_black_24dp"
-        android:background="@drawable/call_devs" />
-    <ImageButton
-
-        android:layout_centerHorizontal="true"
-        android:layout_toRightOf="@+id/call_gian"
-        android:layout_below="@+id/linear_gian"
-        android:layout_margin="5dp"
-        android:id="@+id/msg_gian"
-
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-
-        android:src="@drawable/ic_message_black_24dp"
-        android:background="@drawable/mail_dev" />
-    <ImageButton
-        android:layout_toRightOf="@+id/msg_gian"
-        android:layout_margin="5dp"
-        android:id="@+id/mail_gian"
-        android:layout_below="@+id/linear_gian"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-
-        android:src="@drawable/ic_email_black_24dp"
-        android:background="@drawable/msg_dev" />
 
     <LinearLayout
         android:id="@+id/linear_minhaz"
@@ -224,13 +161,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="100dp"
+            android:layout_width="80dp"
             android:src="@drawable/minhazpic"
             android:layout_gravity="center"
             app:civ_border_width="2dp"
             app:civ_border_color="@color/colorPrimary"
 
-            android:layout_height="100dp" />
+            android:layout_height="80dp" />
 
         <View
             android:layout_marginTop="5dp"
@@ -249,6 +186,7 @@
             android:layout_height="wrap_content"
             android:text="B.Sc. Engineering"/>
         <TextView
+            android:id="@+id/batch"
             android:textColor="#000"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
@@ -256,57 +194,63 @@
             android:text="CSE 13th Batch"/>
 
     </LinearLayout>
-
-
-    <ImageButton
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="5dp"
-android:layout_toLeftOf="@id/msg_minhaz"
-        android:layout_marginLeft="5dp"
-        android:id="@+id/call_minhaz"
+    <RelativeLayout
+        android:id="@+id/suggestionLayout"
         android:layout_below="@+id/linear_minhaz"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/suggestion_send"
+        android:textColorHint="#fff"
 
-
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-
-
-        android:src="@drawable/ic_call_black_24dp"
-        android:background="@drawable/call_devs" />
-    <ImageButton
-
-        android:layout_centerHorizontal="true"
-        android:layout_toLeftOf="@+id/mail_minhaz"
-        android:layout_below="@+id/linear_gian"
+        android:layout_toLeftOf="@+id/sendButton"
+        android:layout_width="match_parent"
         android:layout_margin="5dp"
-        android:id="@+id/msg_minhaz"
+        android:layout_height="wrap_content">
 
-        android:layout_width="30dp"
-        android:layout_height="30dp"
 
-        android:src="@drawable/ic_message_black_24dp"
-        android:background="@drawable/mail_dev" />
 
-    <ImageButton
 
-        android:id="@+id/mail_minhaz"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_below="@+id/linear_minhaz"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="18dp"
-        android:layout_marginLeft="5dp"
-        android:layout_alignParentRight="true"
+        <EditText
 
-        android:layout_marginBottom="5dp"
-        android:background="@drawable/msg_dev"
-        android:src="@drawable/ic_email_black_24dp" />
+            android:id="@+id/suggestionText"
+            android:hint="সাজেশন"
+            android:layout_width="match_parent"
+
+            android:maxLines="5"
+            android:layout_height="wrap_content" />
+
+
+    </android.support.design.widget.TextInputLayout>
+        <ImageButton
+
+
+            android:layout_alignParentRight="true"
+            android:background="@drawable/callbtn_bg"
+            android:layout_centerInParent="true"
+
+            android:id="@+id/sendButton"
+            android:layout_marginTop="8dp"
+
+            android:src="@drawable/ic_send_black_24dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+    </RelativeLayout>
+
+
+
+
 
     <TextView
+        android:layout_below="@+id/suggestionLayout"
+
         android:textColor="#000"
-        android:layout_margin="5dp"
-        android:text="পবিপ্রবি ডায়েরি এপ্লিকেশনের এটি একটি বেটা ভার্সন। যেহেতু সকল তথ্য এপ্লিকেশনের জন্য টাইপ করে নেয়া হয়েছে সেহেতু কিছু তথ্য ভুল বা নাও থাকতে পারে।এক্ষেত্রে সবার সহযোগিতা কামনা করছি। এছাড়া এপ্লিকেশনের ডিজাইন, ফিচার নিয়েও যেকোন সাজেশন দেয়া যেতে পারে।"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/suggestions"
 
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
@@ -319,3 +263,4 @@ android:layout_toLeftOf="@id/msg_minhaz"
 
 
 </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

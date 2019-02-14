@@ -35,31 +35,31 @@ public class DeveloperActivity extends AppCompatActivity {
         shimmer.start(textView3);
 
 
-            shimmer.setRepeatCount(50)
-                    .setDuration(1200)
-                    .setStartDelay(300)
-                    .setDirection(Shimmer.ANIMATION_DIRECTION_RTL).setAnimatorListener(new Animator.AnimatorListener() {
-                @Override
-                public void onAnimationStart(Animator animation) {
+        shimmer.setRepeatCount(50)
+                .setDuration(1200)
+                .setStartDelay(300)
+                .setDirection(Shimmer.ANIMATION_DIRECTION_RTL).setAnimatorListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
 
-                }
+            }
 
-                @Override
-                public void onAnimationEnd(Animator animation) {
+            @Override
+            public void onAnimationEnd(Animator animation) {
 
-                }
+            }
 
-                @Override
-                public void onAnimationCancel(Animator animation) {
+            @Override
+            public void onAnimationCancel(Animator animation) {
 
-                }
+            }
 
-                @Override
-                public void onAnimationRepeat(Animator animation) {
+            @Override
+            public void onAnimationRepeat(Animator animation) {
 
-                }
-            });
-
+            }
+        });
+/*
         ImageButton callSir = findViewById(R.id.call_dev);
         ImageButton msgSir = findViewById(R.id.message_dev);
         ImageButton mailSir = findViewById(R.id.email_dev);
@@ -178,6 +178,7 @@ public class DeveloperActivity extends AppCompatActivity {
 
 
         }
-
+*/
     }
+}
 

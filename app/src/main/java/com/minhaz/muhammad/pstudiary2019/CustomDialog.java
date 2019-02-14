@@ -52,7 +52,7 @@ public class CustomDialog extends Dialog implements View.OnClickListener {
         TextView name = findViewById(R.id.nameD);
         name.setText(this.name);
         occupation.setText(this.occupation);
-        dept.setText(this.dept + " বিভাগ");
+        dept.setText(this.dept);
         mail.setText(this.mail);
         mobile.setText(this.mobile);
 

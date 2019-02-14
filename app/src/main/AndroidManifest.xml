@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.minhaz.muhammad.pstudiary2019">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
@@ -11,23 +12,53 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DeanOfficeActivity"></activity>
-        <activity android:name=".ExternalActivity" />
-        <activity android:name=".EmergencyActivity" />
-        <activity android:name=".RegisterOfficeActivity" />
-        <activity android:name=".GeneralServicesActivity" />
-        <activity android:name=".VeterinaryList" />
-        <activity android:name=".LandManagementList" />
-        <activity android:name=".NutritionAndFoodList" />
-        <activity android:name=".DisasterManagementList" />
-        <activity android:name=".BusinessAdministrationManagementList" />
-        <activity android:name=".ComputerScienceList" />
-        <activity android:name=".FisheriesList" />
-        <activity android:name=".DeveloperActivity" />
-        <activity android:name=".AgricultureList" />
+        <activity android:name=".HallActivity"></activity>
+        <activity
+            android:name=".DeanOfficeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ExternalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EmergencyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RegisterOfficeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".GeneralServicesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".VeterinaryList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LandManagementList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NutritionAndFoodList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DisasterManagementList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BusinessAdministrationManagementList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ComputerScienceList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FisheriesList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DeveloperActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AgricultureList"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Splash"
             android:label="@string/title_activity_main"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,7 +66,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

@@ -17,7 +17,7 @@ import com.arlib.floatingsearchview.FloatingSearchView;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class DeanOfficeActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, SearchView.OnCloseListener {
+public class HallActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, SearchView.OnCloseListener {
 
 
     private CustomAdapter listAdapter;
@@ -61,7 +61,7 @@ public class DeanOfficeActivity extends AppCompatActivity implements SearchView.
             TextView occupation = v.findViewById(R.id.occupationText);
             TextView mobile = v.findViewById(R.id.mobile);
             TextView email = v.findViewById(R.id.eemail);
-            new CustomDialog(DeanOfficeActivity.this, name.getText().toString(), occupation.getText().toString(), mobile.getText().toString(), email.getText().toString(), ((Parent) DeanOfficeActivity.this.parentList.get(groupPosition)).getName()).show();
+            new CustomDialog(HallActivity.this, name.getText().toString(), occupation.getText().toString(), mobile.getText().toString(), email.getText().toString(), ((Parent) HallActivity.this.parentList.get(groupPosition)).getName()).show();
             return false;
         }
     }
@@ -112,7 +112,7 @@ public class DeanOfficeActivity extends AppCompatActivity implements SearchView.
         listAdapter = new CustomAdapter(this, parentList);
         //attach the adapter to the list
         myList.setAdapter(listAdapter);
-        myList.setOnChildClickListener(new DeanOfficeActivity.ChildShortClick());
+        myList.setOnChildClickListener(new HallActivity.ChildShortClick());
 
     }
 
@@ -122,14 +122,7 @@ public class DeanOfficeActivity extends AppCompatActivity implements SearchView.
 
         //Put data here
 
-        datafromDb("dean_ag","এগ্রিকালচার অনুষদ");
-        datafromDb("dean_cse","কম্পিউটার সায়েন্স এন্ড ইঞ্জিনিয়ারিং অনুষদ");
-        datafromDb("dean_bam","বিজনেস এডমিনিস্ট্রেশন এন্ড ম্যানেজমেন্ট অনুষদ");
-        datafromDb("dean_dvm","এ্যানিমাল সায়েন্স এন্ড ভেটেরিনারি মেডিসিন অনুষদ");
-        datafromDb("dean_fish","ফিশারিজ অনুষদ");
-        datafromDb("dean_dm","ডিজাস্টার ম্যানেজমেন্ট অনুষদ");
-        datafromDb("dean_nfs","নিউট্রিশন এন্ড ফুড সায়েন্স অনুষদ");
-        datafromDb("dean_lma","ল্যান্ড ম্যানেজমেন্ট এন্ড এ্যাডমিনিস্ট্রেশন অনুষদ");
+        //datafromDb("cse_cit","কম্পিউটার সায়েন্স এন্ড ইনফরমেশন টেকনোলজি"); <Format
 
 
 
@@ -166,5 +159,6 @@ public class DeanOfficeActivity extends AppCompatActivity implements SearchView.
 
 
 }
+
 
 

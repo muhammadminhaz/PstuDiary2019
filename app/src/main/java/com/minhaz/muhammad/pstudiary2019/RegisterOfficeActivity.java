@@ -122,7 +122,7 @@ public class RegisterOfficeActivity extends AppCompatActivity implements SearchV
 
         //Put data here
 
-        //datafromDb("cse_cit","কম্পিউটার সায়েন্স এন্ড ইনফরমেশন টেকনোলজি"); <Format
+        datafromDb("off_register","রেজিস্ট্রার অফিস");
 
 
 

@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
@@ -45,7 +49,7 @@
                     android:gravity="center"
                     android:textAllCaps="true"
                     android:layout_height="wrap_content"
-                    android:text="Professor Dr. Md. Harun-Or- Rashid"
+                    android:text="ড.মোঃ হারুনর রশীদ"
                     android:textStyle="bold"
                     android:layout_margin="5dp"/>
 
@@ -59,7 +63,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAllCaps="true"
-                    android:text="vc"
+                    android:text="ভিসি"
                     android:layout_margin="5dp"/>
 
 
@@ -103,7 +107,7 @@
                     android:gravity="center"
                     android:textAllCaps="true"
                     android:textStyle="bold"
-                    android:text="Professor Mohammad Ali"
+                    android:text="মোহাম্মদ আলী"
                     android:layout_margin="5dp"/>
 
 
@@ -119,7 +123,7 @@
 
                     android:gravity="center"
                     android:textAllCaps="true"
-                    android:text="Pro vc"
+                    android:text="প্রো-ভিসি"
                     android:layout_margin="5dp"/>
 
 
@@ -167,3 +171,4 @@
 
 
 </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

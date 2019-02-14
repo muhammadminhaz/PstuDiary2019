@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
+
+
     <Button
         android:onClick="GeneralList"
         android:id="@+id/general"
 
+
         android:textColor="#102167"
+
         android:textSize="20sp"
         android:background="@drawable/button_bg"
         android:text="সাধারণ সেবা"
@@ -21,6 +30,7 @@
 
         android:elevation="10dp"
         android:layout_height="80dp" />
+
 
     <Button
 
@@ -40,6 +50,7 @@
 
     <Button
 
+        android:id="@+id/external"
         android:onClick="ExternalList"
         android:layout_below="@+id/emergency"
         android:textColor="#102167"
@@ -53,6 +64,22 @@
         android:layout_width="match_parent"
         android:layout_height="80dp" />
 
+    <Button
+
+        android:onClick="HallList"
+        android:layout_below="@+id/external"
+        android:textColor="#102167"
+        android:textSize="20sp"
+        android:text="হল যোগাযোগ"
+        android:background="@drawable/button_bg"
+        android:elevation="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginRight="9dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp" />
+
 
 
 </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

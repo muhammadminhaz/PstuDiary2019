@@ -122,7 +122,37 @@ public class GeneralServicesActivity extends AppCompatActivity implements Search
 
         //Put data here
 
-        //datafromDb("cse_cit","কম্পিউটার সায়েন্স এন্ড ইনফরমেশন টেকনোলজি"); <Format
+        datafromDb("off_establish","সংস্থাপন শাখা");
+        datafromDb("off_affears","কউন্সিল অ্যাফেয়ার্স");
+        datafromDb("off_edu","শিক্ষা ও বৃত্তি শাখা");
+        datafromDb("off_information","তথ্য প্রদান ইউনিট");
+        datafromDb("off_proquire","প্রকিউরমেন্ট এন্ড স্টোর শাখা");
+        datafromDb("off_finan","অর্থ ও হিসাব বিভাগ");
+        datafromDb("off_accounts","একাউন্টস বিল এন্ড সেলারি সেকশন");
+        datafromDb("off_fund","ক্যাশ ফান্ড এন্ড পেনশন সেকশন ");
+        datafromDb("off_audit","অডিট সেকশন");
+        datafromDb("off_budget","বাজেট সেকশন");
+        datafromDb("off_plan","পরিকল্পনা, উন্নয়ন ও ওয়ার্কস");
+        datafromDb("off_eng ","প্রকৌশল বিভাগ");
+        datafromDb("off_exam","পরীক্ষা নিয়ন্ত্রক শাখা");
+        datafromDb("off_library","কেন্দ্রীয় গ্রন্থাগার");
+        datafromDb("off_physical","শারীরিক শিক্ষা");
+        datafromDb("off_publication","জনসংযোগ ও প্রকাশনা শাখা");
+        datafromDb("off_farm","কৃষি খামার");
+        datafromDb("off_ictcell","আইসিটি সেল");
+        datafromDb("off_ictcenter","আইসিটি সেন্টার");
+        datafromDb("off_research","কেন্দ্রীয় গবেষণাগার");
+        datafromDb("off_rearchcenter","সেন্টার ফর রিসার্চ এন্ড ট্রেনিং");
+        datafromDb("off_legal","এস্টেট এ্যাফেয়ার্স এন্ড লিগ্যাল এ্যাডভাইজরি শাখা");
+        datafromDb("off_mosq","কেন্দ্রীয় জামে মসজিদ");
+        datafromDb("off_srijoni","সৃজনী বিদ্যানিকেতন ");
+        datafromDb("off_teachersassociation","শিক্ষক সমিতি");
+        datafromDb("off_associarion","অফিসার্স অ্যাসোসিয়েশান ");
+        datafromDb("off_staffassociation","কর্মচারী পরিষদ ");
+//        datafromDb("off_businessclub","বিজনেস ক্লাব");
+//        datafromDb("off_debatclub","ডিবেটিং সোসাইটি");
+        //datafromDb("off_budget","সেকশন");
+
 
 
 

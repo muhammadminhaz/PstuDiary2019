@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private ViewPager mViewPager;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        mViewPager.setOffscreenPageLimit(4);
+
 
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
@@ -97,12 +100,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void ProVC(View view) {
 
-       CustomDialog customDialog = new CustomDialog(MainActivity.this,"a","a","a","a","a");
+       CustomDialog customDialog = new CustomDialog(MainActivity.this,"মোহাম্মদ আলী","প্রো-ভিসি","01716919563","malipstu.hort@gmail.com","অধ্যাপক");
        customDialog.show();
     }
 
     public void VC(View view) {
-        CustomDialog customDialog = new CustomDialog(MainActivity.this,"a","a","a","a","a");
+        CustomDialog customDialog = new CustomDialog(MainActivity.this,"ড.মোঃ হারুনর রশীদ","ভিসি","01552429714","Mhrashid_pstu@yahoo.com","অধ্যাপক");
         customDialog.show();
     }
 
@@ -119,6 +122,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void DeanList(View view) {
         Intent i = new Intent(this,DeanOfficeActivity.class);
+        startActivity(i);
+    }
+
+
+    public void HallList(View view) {
+        Intent i = new Intent(this,HallActivity.class);
         startActivity(i);
     }
 
@@ -183,6 +192,10 @@ public class MainActivity extends AppCompatActivity {
                     Services tab3 = new Services();
                     return tab3;
 
+                case 3:
+                    Suggestions tab4 = new Suggestions();
+                    return tab4;
+
 
             }
             return null;
@@ -191,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 4;
         }
     }
 

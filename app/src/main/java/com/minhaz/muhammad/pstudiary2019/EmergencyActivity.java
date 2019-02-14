@@ -122,10 +122,13 @@ public class EmergencyActivity extends AppCompatActivity implements SearchView.O
 
         //Put data here
 
-        //datafromDb("cse_cit","কম্পিউটার সায়েন্স এন্ড ইনফরমেশন টেকনোলজি"); <Format
-
-
-
+        datafromDb("off_medical","হেল্থ কেয়ার সেন্টার");
+        datafromDb("off_transport","পরিবহন বিভাগ");
+        datafromDb("off_security","নিরাপত্তা শাখা");
+        datafromDb("off_guiesthouse","অতিথি ভবন");
+        datafromDb1("off_badhon","বাঁধন");
+        datafromDb("off_bncc","বিএনসিসি");
+       // datafromDb1("ext_media","মিডিয়া");
 
 
 
@@ -156,6 +159,31 @@ public class EmergencyActivity extends AppCompatActivity implements SearchView.O
         }
     }
 
+
+    public void datafromDb1(String table_name,String department_name){
+        ArrayList<Child> childList = new ArrayList<Child>();
+
+
+        try {
+            myDbHelper.createDataBase();
+        } catch (IOException ioe) {
+            throw new Error("Unable to create database");
+        }
+
+        myDbHelper.openDataBase();
+
+
+        c = myDbHelper.query(table_name, null, null, null, null, null, null);
+        if (c.moveToFirst()) {
+            do {
+                Child child = new Child( c.getString(0),"", c.getString(1),"");
+                childList.add(child);
+            } while (c.moveToNext());
+            Parent parent = new Parent(department_name, childList);
+            parentList.add(parent);
+
+        }
+    }
 
 
 }

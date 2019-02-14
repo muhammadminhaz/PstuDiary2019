@@ -4,6 +4,15 @@
     <string name="tab_text_1">অনুষদ</string>
     <string name="tab_text_2">প্রশাসন</string>
     <string name="tab_text_3">সেবাসমুহ</string>
+    <string name="tab_text_4">সাজেশন</string>
+    <string name="sir_name">মোঃ মাহবুবুর রহমান</string>
+    <string name="sir_designation">প্রভাষক</string>
+    <string name="sir_dept">কম্পিউটার সায়েন্স এন্ড ইনফরমেশন টেকনোলজি বিভাগ</string>
+    <string name="gian_name"></string>
+    <string name="minhaz_name"></string>
+    <string name="degree"></string>
+    <string name="cse_batch"></string>
+    <string name="suggestions">পবিপ্রবি ডায়েরি এপ্লিকেশনের এটি একটি বেটা ভার্সন। যেহেতু সকল তথ্য এপ্লিকেশনের জন্য টাইপ করে নেয়া হয়েছে সেহেতু কিছু তথ্য ভুল বা নাও থাকতে পারে।এক্ষেত্রে সবার সহযোগিতা কামনা করছি। এছাড়া এপ্লিকেশনের ডিজাইন, ফিচার নিয়েও যেকোন সাজেশন দেয়া যেতে পারে।</string>
     <string name="action_settings">ডেভেলপার</string>
     <string name="section_format">Hello World from section: %1$d</string>
 </resources>
