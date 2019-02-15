@@ -1,7 +1,5 @@
 package com.minhaz.muhammad.pstudiary2019;
 
-
-
 import android.app.SearchManager;
 import android.content.Context;
 import android.database.Cursor;
@@ -12,41 +10,17 @@ import android.widget.ExpandableListView;
 import android.widget.SearchView;
 import android.widget.TextView;
 
-import com.arlib.floatingsearchview.FloatingSearchView;
-
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class ExternalActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, SearchView.OnCloseListener {
-
+public class FisheriesList extends AppCompatActivity implements
+        SearchView.OnQueryTextListener, SearchView.OnCloseListener{
 
     private CustomAdapter listAdapter;
-
     private ExpandableListView myList;
     private ArrayList<Parent> parentList = new ArrayList<>();
     Cursor c = null;           //zihan
     DatabaseHelper myDbHelper;      //zihan
-
-    @Override
-    public boolean onClose() {
-        listAdapter.fillerData("");
-        expandAll();
-        return false;
-    }
-
-    @Override
-    public boolean onQueryTextSubmit(String query) {
-        listAdapter.fillerData(query);
-        expandAll();
-        return false;
-    }
-
-    @Override
-    public boolean onQueryTextChange(String newText) {
-        listAdapter.fillerData(newText);
-        expandAll();
-        return false;
-    }
 
     class ChildShortClick implements ExpandableListView.OnChildClickListener
     {
@@ -61,7 +35,7 @@ public class ExternalActivity extends AppCompatActivity implements SearchView.On
             TextView occupation = v.findViewById(R.id.occupationText);
             TextView mobile = v.findViewById(R.id.mobile);
             TextView email = v.findViewById(R.id.eemail);
-            new CustomDialog(ExternalActivity.this, name.getText().toString(), occupation.getText().toString(), mobile.getText().toString(), email.getText().toString(), ((Parent) ExternalActivity.this.parentList.get(groupPosition)).getName()).show();
+            new CustomDialog(FisheriesList.this, name.getText().toString(), occupation.getText().toString(), mobile.getText().toString(), email.getText().toString(), ((Parent) FisheriesList.this.parentList.get(groupPosition)).getName()).show();
             return false;
         }
     }
@@ -74,14 +48,11 @@ public class ExternalActivity extends AppCompatActivity implements SearchView.On
 
         myDbHelper = new DatabaseHelper(getApplicationContext());       //zihan
 
-
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
 
         SearchView search = findViewById(R.id.search);
 
 
-
-        assert searchManager != null;
         search.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         search.setIconifiedByDefault(false);
         search.setFocusable(false);
@@ -112,7 +83,7 @@ public class ExternalActivity extends AppCompatActivity implements SearchView.On
         listAdapter = new CustomAdapter(this, parentList);
         //attach the adapter to the list
         myList.setAdapter(listAdapter);
-        myList.setOnChildClickListener(new ExternalActivity.ChildShortClick());
+        myList.setOnChildClickListener(new FisheriesList.ChildShortClick());
 
     }
 
@@ -120,27 +91,40 @@ public class ExternalActivity extends AppCompatActivity implements SearchView.On
     private void loadSomeData() {
 
 
-        //Put data here
 
-        datafromDb1("ext_media","সংবাদ সংস্থা ও অন্যান্য মিডিয়া");
-        datafromDb1("ext_dumki","দুমকি উপজেলার গুরুত্বপূর্ণ ফোন");
-        //datafromDb1("ext_patuahospital","পটুয়াখালী হাসপাতাল ও ক্লিনিক");
-        datafromDb1("ext_barisal","বরিশালের গুরুত্বপূর্ণ ফোন");
-        datafromDb1("ext_kukata","সমুদ্র সৈকত কুয়াকাটার ফোন");
-        datafromDb1("ext_patualanch","পটুয়াখালী লঞ্চ বুকিং অফিস");
-        datafromDb1("ext_barisallanch","বরিশাল লঞ্চ বুকিং অফিস");
-        datafromDb1("ext_patabunia","ঢাকা-দুমকি (পাতাবুনিয়া ঘাট) লঞ্চ বুকিং");
-        datafromDb1("ext_greenline","গ্রীন লাইন ওয়াটার বাস বুকিং অফিস");
-        datafromDb1("ext_flite","বিমান বুকিং অফিস");
-       // datafromDb("ext_media","");
-
-
+        datafromDb("fish_aqua","একুয়াকালচার");
+        datafromDb("fish_biology","ফিশারিজ বায়োলজি এন্ড জেনেটিক্স");
+        datafromDb("fish_management","ফিশারিজ ম্যানেজমেন্ট");
+        datafromDb("fish_merinfish","মেরিন ফিশারিজ এন্ড ওসানোগ্রাফি");
+        datafromDb("fish_tech","ফিশারিজ টেকনোলজি");
 
 
 
 
     }
 
+    @Override
+    public boolean onClose() {
+        listAdapter.fillerData("");
+        expandAll();
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        listAdapter.fillerData(query);
+        expandAll();
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        listAdapter.fillerData(newText);
+        expandAll();
+        return false;
+    }
+
+    //zihan
     public void datafromDb(String table_name,String department_name){
         ArrayList<Child> childList = new ArrayList<Child>();
 
@@ -166,33 +150,6 @@ public class ExternalActivity extends AppCompatActivity implements SearchView.On
         }
     }
 
-    public void datafromDb1(String table_name,String department_name){
-        ArrayList<Child> childList = new ArrayList<Child>();
-
-
-        try {
-            myDbHelper.createDataBase();
-        } catch (IOException ioe) {
-            throw new Error("Unable to create database");
-        }
-
-        myDbHelper.openDataBase();
-
-
-        c = myDbHelper.query(table_name, null, null, null, null, null, null);
-        if (c.moveToFirst()) {
-            do {
-                Child child = new Child( c.getString(0),"", c.getString(1),"");
-                childList.add(child);
-            } while (c.moveToNext());
-            Parent parent = new Parent(department_name, childList);
-            parentList.add(parent);
-
-        }
-    }
-
 
 
 }
-
-

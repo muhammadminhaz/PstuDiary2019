@@ -128,6 +128,7 @@ public class GeneralServicesActivity extends AppCompatActivity implements Search
         datafromDb("off_information","তথ্য প্রদান ইউনিট");
         datafromDb("off_proquire","প্রকিউরমেন্ট এন্ড স্টোর শাখা");
         datafromDb("off_finan","অর্থ ও হিসাব বিভাগ");
+        datafromDb("off_proctor","প্রক্টরিয়াল বিভাগ");
         datafromDb("off_accounts","একাউন্টস বিল এন্ড সেলারি সেকশন");
         datafromDb("off_fund","ক্যাশ ফান্ড এন্ড পেনশন সেকশন ");
         datafromDb("off_audit","অডিট সেকশন");
@@ -149,8 +150,9 @@ public class GeneralServicesActivity extends AppCompatActivity implements Search
         datafromDb("off_teachersassociation","শিক্ষক সমিতি");
         datafromDb("off_associarion","অফিসার্স অ্যাসোসিয়েশান ");
         datafromDb("off_staffassociation","কর্মচারী পরিষদ ");
-//        datafromDb("off_businessclub","বিজনেস ক্লাব");
-//        datafromDb("off_debatclub","ডিবেটিং সোসাইটি");
+        datafromDb("off_studentadvice","স্টুডেন্টস এডভাইজরি অফিস");
+        datafromDb1("off_businessclub","বিজনেস ক্লাব");
+        datafromDb1("off_debatclub","ডিবেটিং সোসাইটি");
         //datafromDb("off_budget","সেকশন");
 
 
@@ -178,6 +180,31 @@ public class GeneralServicesActivity extends AppCompatActivity implements Search
         if (c.moveToFirst()) {
             do {
                 Child child = new Child( c.getString(0),  c.getString(1), c.getString(2),  c.getString(3));
+                childList.add(child);
+            } while (c.moveToNext());
+            Parent parent = new Parent(department_name, childList);
+            parentList.add(parent);
+
+        }
+    }
+
+    public void datafromDb1(String table_name,String department_name){
+        ArrayList<Child> childList = new ArrayList<Child>();
+
+
+        try {
+            myDbHelper.createDataBase();
+        } catch (IOException ioe) {
+            throw new Error("Unable to create database");
+        }
+
+        myDbHelper.openDataBase();
+
+
+        c = myDbHelper.query(table_name, null, null, null, null, null, null);
+        if (c.moveToFirst()) {
+            do {
+                Child child = new Child( c.getString(0),"", c.getString(1),"");
                 childList.add(child);
             } while (c.moveToNext());
             Parent parent = new Parent(department_name, childList);

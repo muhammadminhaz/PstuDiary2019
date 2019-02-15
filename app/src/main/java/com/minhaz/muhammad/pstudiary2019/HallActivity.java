@@ -122,7 +122,14 @@ public class HallActivity extends AppCompatActivity implements SearchView.OnQuer
 
         //Put data here
 
-        //datafromDb("cse_cit","কম্পিউটার সায়েন্স এন্ড ইনফরমেশন টেকনোলজি"); <Format
+        datafromDb("hall_d1","শের-ই-বাংলা হল-১");
+        datafromDb("hall_d2","শের-ই-বাংলা হল-২");
+        datafromDb("hall_d3","কবি বেগম সুফিয়া কামাল হল");
+        datafromDb("hall_d4","এম. কেরামত আলী হল");
+        datafromDb("hall_d5","শেখ ফজিলাতুন্নেছা মুজিব হল");
+        datafromDb("hall_d6","বঙ্গবন্ধু শেখ মুজিবুর রহমান হল");
+        datafromDb("hall_d7","বীরশ্রেষ্ঠ ক্যাপ্টেন মহিউদ্দিন জাহাঙ্গীর হল(বাবুগঞ্জ)");
+        datafromDb("hall_d8","শেখ ফজিলাতুন্নেছা মুজিব হল(বাবুগঞ্জ)");
 
 
 

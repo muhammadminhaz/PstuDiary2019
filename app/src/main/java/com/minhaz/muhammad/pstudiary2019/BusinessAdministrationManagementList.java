@@ -17,11 +17,10 @@ import com.arlib.floatingsearchview.FloatingSearchView;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class ExternalActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, SearchView.OnCloseListener {
+public class BusinessAdministrationManagementList extends AppCompatActivity implements SearchView.OnQueryTextListener, SearchView.OnCloseListener {
 
 
     private CustomAdapter listAdapter;
-
     private ExpandableListView myList;
     private ArrayList<Parent> parentList = new ArrayList<>();
     Cursor c = null;           //zihan
@@ -61,7 +60,8 @@ public class ExternalActivity extends AppCompatActivity implements SearchView.On
             TextView occupation = v.findViewById(R.id.occupationText);
             TextView mobile = v.findViewById(R.id.mobile);
             TextView email = v.findViewById(R.id.eemail);
-            new CustomDialog(ExternalActivity.this, name.getText().toString(), occupation.getText().toString(), mobile.getText().toString(), email.getText().toString(), ((Parent) ExternalActivity.this.parentList.get(groupPosition)).getName()).show();
+            new CustomDialog(BusinessAdministrationManagementList.this, name.getText().toString(), occupation.getText().toString(), mobile.getText().toString(), email.getText().toString(), ((Parent) BusinessAdministrationManagementList.this.parentList.get(groupPosition)).getName()).show();
+
             return false;
         }
     }
@@ -80,13 +80,13 @@ public class ExternalActivity extends AppCompatActivity implements SearchView.On
         SearchView search = findViewById(R.id.search);
 
 
-
         assert searchManager != null;
         search.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         search.setIconifiedByDefault(false);
         search.setFocusable(false);
         search.setOnQueryTextListener(this);
         search.setOnCloseListener(this);
+
 
         displayList();
 
@@ -112,7 +112,7 @@ public class ExternalActivity extends AppCompatActivity implements SearchView.On
         listAdapter = new CustomAdapter(this, parentList);
         //attach the adapter to the list
         myList.setAdapter(listAdapter);
-        myList.setOnChildClickListener(new ExternalActivity.ChildShortClick());
+        myList.setOnChildClickListener(new BusinessAdministrationManagementList.ChildShortClick());
 
     }
 
@@ -120,19 +120,13 @@ public class ExternalActivity extends AppCompatActivity implements SearchView.On
     private void loadSomeData() {
 
 
-        //Put data here
 
-        datafromDb1("ext_media","সংবাদ সংস্থা ও অন্যান্য মিডিয়া");
-        datafromDb1("ext_dumki","দুমকি উপজেলার গুরুত্বপূর্ণ ফোন");
-        //datafromDb1("ext_patuahospital","পটুয়াখালী হাসপাতাল ও ক্লিনিক");
-        datafromDb1("ext_barisal","বরিশালের গুরুত্বপূর্ণ ফোন");
-        datafromDb1("ext_kukata","সমুদ্র সৈকত কুয়াকাটার ফোন");
-        datafromDb1("ext_patualanch","পটুয়াখালী লঞ্চ বুকিং অফিস");
-        datafromDb1("ext_barisallanch","বরিশাল লঞ্চ বুকিং অফিস");
-        datafromDb1("ext_patabunia","ঢাকা-দুমকি (পাতাবুনিয়া ঘাট) লঞ্চ বুকিং");
-        datafromDb1("ext_greenline","গ্রীন লাইন ওয়াটার বাস বুকিং অফিস");
-        datafromDb1("ext_flite","বিমান বুকিং অফিস");
-       // datafromDb("ext_media","");
+        datafromDb("bam_ais","একাউন্টিং এন্ড ইনফরমেশন সিস্টেমস");
+        datafromDb("bam_economics","ইকোনোমিক্স এন্ড সোশিওলজি");
+        datafromDb("bam_finance","ফিন্যান্স এন্ড ব্যাংকিং");
+        datafromDb("bam_lcm","ল্যাংগুয়েজ এন্ড কমিউনিকেশন");
+        datafromDb("bam_management","ম্যানেজমেন্ট স্টাডিজ");
+        datafromDb("bam_marketing","মার্কেটিং");
 
 
 
@@ -166,33 +160,7 @@ public class ExternalActivity extends AppCompatActivity implements SearchView.On
         }
     }
 
-    public void datafromDb1(String table_name,String department_name){
-        ArrayList<Child> childList = new ArrayList<Child>();
-
-
-        try {
-            myDbHelper.createDataBase();
-        } catch (IOException ioe) {
-            throw new Error("Unable to create database");
-        }
-
-        myDbHelper.openDataBase();
-
-
-        c = myDbHelper.query(table_name, null, null, null, null, null, null);
-        if (c.moveToFirst()) {
-            do {
-                Child child = new Child( c.getString(0),"", c.getString(1),"");
-                childList.add(child);
-            } while (c.moveToNext());
-            Parent parent = new Parent(department_name, childList);
-            parentList.add(parent);
-
-        }
-    }
-
 
 
 }
-
 

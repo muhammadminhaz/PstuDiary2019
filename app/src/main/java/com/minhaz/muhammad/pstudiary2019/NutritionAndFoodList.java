@@ -17,11 +17,10 @@ import com.arlib.floatingsearchview.FloatingSearchView;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class ExternalActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, SearchView.OnCloseListener {
+public class NutritionAndFoodList extends AppCompatActivity implements SearchView.OnQueryTextListener, SearchView.OnCloseListener {
 
 
     private CustomAdapter listAdapter;
-
     private ExpandableListView myList;
     private ArrayList<Parent> parentList = new ArrayList<>();
     Cursor c = null;           //zihan
@@ -61,7 +60,7 @@ public class ExternalActivity extends AppCompatActivity implements SearchView.On
             TextView occupation = v.findViewById(R.id.occupationText);
             TextView mobile = v.findViewById(R.id.mobile);
             TextView email = v.findViewById(R.id.eemail);
-            new CustomDialog(ExternalActivity.this, name.getText().toString(), occupation.getText().toString(), mobile.getText().toString(), email.getText().toString(), ((Parent) ExternalActivity.this.parentList.get(groupPosition)).getName()).show();
+            new CustomDialog(NutritionAndFoodList.this, name.getText().toString(), occupation.getText().toString(), mobile.getText().toString(), email.getText().toString(), ((Parent) NutritionAndFoodList.this.parentList.get(groupPosition)).getName()).show();
             return false;
         }
     }
@@ -78,7 +77,6 @@ public class ExternalActivity extends AppCompatActivity implements SearchView.On
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
 
         SearchView search = findViewById(R.id.search);
-
 
 
         assert searchManager != null;
@@ -112,7 +110,7 @@ public class ExternalActivity extends AppCompatActivity implements SearchView.On
         listAdapter = new CustomAdapter(this, parentList);
         //attach the adapter to the list
         myList.setAdapter(listAdapter);
-        myList.setOnChildClickListener(new ExternalActivity.ChildShortClick());
+        myList.setOnChildClickListener(new NutritionAndFoodList.ChildShortClick());
 
     }
 
@@ -120,20 +118,14 @@ public class ExternalActivity extends AppCompatActivity implements SearchView.On
     private void loadSomeData() {
 
 
-        //Put data here
 
-        datafromDb1("ext_media","সংবাদ সংস্থা ও অন্যান্য মিডিয়া");
-        datafromDb1("ext_dumki","দুমকি উপজেলার গুরুত্বপূর্ণ ফোন");
-        //datafromDb1("ext_patuahospital","পটুয়াখালী হাসপাতাল ও ক্লিনিক");
-        datafromDb1("ext_barisal","বরিশালের গুরুত্বপূর্ণ ফোন");
-        datafromDb1("ext_kukata","সমুদ্র সৈকত কুয়াকাটার ফোন");
-        datafromDb1("ext_patualanch","পটুয়াখালী লঞ্চ বুকিং অফিস");
-        datafromDb1("ext_barisallanch","বরিশাল লঞ্চ বুকিং অফিস");
-        datafromDb1("ext_patabunia","ঢাকা-দুমকি (পাতাবুনিয়া ঘাট) লঞ্চ বুকিং");
-        datafromDb1("ext_greenline","গ্রীন লাইন ওয়াটার বাস বুকিং অফিস");
-        datafromDb1("ext_flite","বিমান বুকিং অফিস");
-       // datafromDb("ext_media","");
-
+        datafromDb("nfs_bio","বায়োকেমিস্ট্রি এন্ড ফুড এনালাইসিস");
+        datafromDb("nfs_human","হিউম্যান নিউট্রিশন এন্ড ডাইটেটিক্স");
+        datafromDb("nfs_micro","ফুড মাইক্রোবায়োলজি");
+        datafromDb("nfs_food","ফুড টেকনোলজী এন্ড ইঞ্জিনিয়ারিং");
+        datafromDb("nfs_post","পোস্ট-হারভেস্ট টেকনোলজি এন্ড মার্কেটিং");
+        datafromDb("nfs_com","কমিউনিটি হেলথ্ এন্ড হাইজিন");
+        datafromDb("nfs_envsan","এনভায়রনমেন্টাল স্যানিটেশন বিভাগ");//i dont know
 
 
 
@@ -166,33 +158,7 @@ public class ExternalActivity extends AppCompatActivity implements SearchView.On
         }
     }
 
-    public void datafromDb1(String table_name,String department_name){
-        ArrayList<Child> childList = new ArrayList<Child>();
-
-
-        try {
-            myDbHelper.createDataBase();
-        } catch (IOException ioe) {
-            throw new Error("Unable to create database");
-        }
-
-        myDbHelper.openDataBase();
-
-
-        c = myDbHelper.query(table_name, null, null, null, null, null, null);
-        if (c.moveToFirst()) {
-            do {
-                Child child = new Child( c.getString(0),"", c.getString(1),"");
-                childList.add(child);
-            } while (c.moveToNext());
-            Parent parent = new Parent(department_name, childList);
-            parentList.add(parent);
-
-        }
-    }
-
 
 
 }
-
 
