@@ -36,7 +36,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         app:civ_border_width="2dp"
-        app:civ_border_color="@color/colorPrimary"
+        app:civ_border_color="#102167"
         android:layout_centerHorizontal="true"
         android:src="@drawable/mahbubsirpic"/>
 
@@ -101,7 +101,7 @@
         android:id="@+id/text4"
         android:layout_below="@+id/view"
         android:gravity="center"
-        android:text="সার্বিক সহযোগিতায়"
+        android:text="ডেভেলপারস"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -117,7 +117,7 @@
             android:layout_width="80dp"
             android:src="@drawable/gianpic"
             app:civ_border_width="2dp"
-            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_color="#102167"
 
             android:layout_gravity="center"
             android:layout_height="80dp" />
@@ -165,7 +165,7 @@
             android:src="@drawable/minhazpic"
             android:layout_gravity="center"
             app:civ_border_width="2dp"
-            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_color="#102167"
 
             android:layout_height="80dp" />
 
@@ -249,7 +249,7 @@
         android:layout_below="@+id/suggestionLayout"
 
         android:textColor="#000"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"

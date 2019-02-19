@@ -5,14 +5,14 @@
     tools:targetApi="lollipop">
     <item android:id="@android:id/mask"
         tools:targetApi="lollipop">
-        <shape android:shape="rectangle">
+        <shape android:shape="oval">
             <solid android:color="#38ef7d" />
             <corners android:radius="5dp" />
         </shape>
     </item>
 
     <item android:id="@android:id/background">
-        <shape android:shape="rectangle">
+        <shape android:shape="oval">
             <gradient
                 android:angle="90"
                 android:endColor="#38ef7d"
